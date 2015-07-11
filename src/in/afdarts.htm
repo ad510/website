@@ -1,0 +1,35 @@
+<div>Afdarts (Acronym for Downing Andrew Real-Time Strategy) is a 3D real-time strategy (RTS) game/engine that is made in Visual Basic and uses DirectX. Instead of units being individual people, units are predefined groups, though they can be predefined to contain only one individual. You can <a href="afdartsdownload.htm">download</a> Afdarts from SourceForge. A model editor is included to help you make models in my custom format. The <a href="https://youtube.com/watch?v=5Sl-yHtu1_k">video</a> below is of version 1.0.5, but there is also an <a href="https://youtube.com/watch?v=Q_ohD1gdhZg">AI demo</a> of version pre-0.3.6 and a <a href="https://youtube.com/watch?v=kx7DVsLTej0">gameplay video</a> of version 0.1.0 beta.</div>
+<p style="text-align:center"><object type="application/x-shockwave-flash" data="https://www.youtube-nocookie.com/v/5Sl-yHtu1_k" width="640" height="385"><param name="movie" value="https://www.youtube-nocookie.com/v/5Sl-yHtu1_k"/></object></p>
+<p><span class="h2">Latest unstable release: 1.1.14 alpha</span> (12/31/2014)<br/>
+Afdarts 1.1.14 alpha mainly features a surface-level refactoring of the codebase to do things such as removing my use of Systems Hungarian notation, which apparently fell out of style since the books I learned from were written. I've learned a lot from making Afdarts since I started working on it in 2007, but in the last couple years I've mostly moved on to other projects. As a result, this may end up being one of the last (if not the last) Afdarts releases. Enjoy!</p>
+<p>Changelog:<br/>
+- removed most commented out code<br/>
+- renamed modEng to modDX<br/>
+- modDX can now load non-bitmap 2D sprite images<br/>
+- combined tScn and tScnArray structures<br/>
+- combined tUnit and tUnitData structures<br/>
+- changed swap effect from copy to discard<br/>
+- removed Systems Hungarian notation, which apparently fell out of style since the books I learned from were written<br/>
+- music stops if game is minimized<br/>
+- tweaked faction AI attraction calculation<br/>
+- increased model editor frame rate limit</p>
+<p><span class="h2">Latest stable release: 1.0.6</span> (8/15/2012)<br/>
+I didn't think I would do this, but after more than a year of not expecting to make any more Afdarts 1.0.x releases, I've released Afdarts 1.0.6! I decided to make this release to fix a few crashes I found and because I found what was frequently causing small replays (now called "compact" replays) to desync from the originally played game. I also backported some improvements to the model editor and slightly improved the collision response while keeping it backward compatible. The VBA port is still based on 1.0.5 code because I don't want to borrow someone else's computer again just to use Microsoft Office.</p>
+<p>Changelog:<br/>
+- predefined random is calculated at program start instead of every form load (fixes some replay problems)<br/>
+- improved model editor 2D display<br/>
+- fixed missing comma when saving scenarios<br/>
+- fixed bug in small replays in which individuals avoid positions that a future individual will start at<br/>
+- shadows are no longer drawn off the map before units are made in replays<br/>
+- user can no longer select or follow units that don't yet exist in replays<br/>
+- collision response is now smoother<br/>
+- fixed crash when dragging invisible scrollbar while displaying a short readme<br/>
+- fixed crash when displaying empty readme<br/>
+- unit creation time is now set to 0 or 1 milliseconds after simulation time<br/>
+- fixed a bug that broke small replays saved after loading a saved game<br/>
+- fixed crash when GetTickCount jumps from positive to negative values<br/>
+- renamed small replays to compact replays and accurate replays to archive replays<br/>
+- errors when saving cutscenes or videos are more gracefully handled<br/>
+- temporary files are no longer made when menu-related files are missing<br/>
+- scenarios are now saved correctly if the original file is modified after it is loaded</p>
+<p><a href="http://sourceforge.net/p/downinga-rts/news">all Afdarts news</a></p>

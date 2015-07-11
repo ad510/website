@@ -1,0 +1,36 @@
+<div><a href="interaction.htm">Interaction Lab home</a></div>
+<p>In summer 2012, I refined my Kinect calibration ROS package in preparation for a public release. I also played around a little with the <a href="http://pointclouds.org">Point Cloud Library</a> and started working on making the <a href="http://ros.org/wiki/turtlebot_block_manipulation">turtlebot_block_manipulation</a> demo work on <a href="pr.htm">PR Lite</a>. I posted my summer 2012 updates online because the Interaction Lab had many student workers during that time.</p>
+<p><span class="h2">Summer 2012 milestones:</span><br/></p>
+<ol>
+<li>Essentially finish the Kinect calibration project. This means:
+ <ol>
+ <li>Add a BSD license, first emailing the upstream developers to find out what they think of using their code. (done 7/10/2012)</li>
+ <li>Improve how the program stores calibrations in the yaml file. (done 6/9/2012)</li>
+ <li>Convert the shell scripts such as calibrate_2_kinects.sh into launch files (for Interaction Lab use only). (done 6/9/2012)</li>
+ <li>Update the readme?</li>
+ <li>Put the multi_calibrate package in a public repository and add a web page at ros.org. (draft wiki page <a href="interactionwiki.txt">here</a>)</li>
+ </ol></li>
+<li>Use the Point Cloud Library to combine 2 or more point clouds and downsample them.</li>
+<li>Combine person tracking using the Kinect with leg tracking using a lidar. This means:
+ <ol>
+ <li>Do some basic research on the relevant packages and make a list of milestones. :)</li>
+ <li>Complete the milestones I come up with for (1).</li>
+ </ol></li>
+</ol>
+<p><span class="h2">Updates:</span></p>
+<p>8/25/2012<br/>
+I finally updated the very outdated description of my Kinect calibration project on this web page.</p>
+<p>8/4/2012, 8/11/2012, 8/18/2012<br/>
+I worked on making the <a href="http://ros.org/wiki/turtlebot_block_manipulation">turtlebot_block_manipulation</a> demo work on <a href="pr.htm">PR Lite</a>, one of the proposed alternatives/additions to the third milestone. (This isn't as simple as it sounds due to PR Lite's more complex body.)</p>
+<p>7/16/2012<br/>
+I added a local readme in readme.txt based on the wiki, and renamed the old readme to readme_old.txt.</p>
+<p>7/10/2012<br/>
+I added BSD licensing headers to the multi_calibrate package as suggested by a maintainer of the package it uses code from. Note that according to camera_pose_calibration's <a href="https://kforge.ros.org/calibration/camera_pose/file/9bb0c015e3a5/camera_pose_calibration">changeset history</a>, calibration_transform_publisher.py was never modified by Vijay Pradeep, so I didn't include Vijay in the authors list for that file.</p>
+<p>7/7/2012 - 7/8/2012<br/>
+I was able to downsample (but not yet combine) a Kinect point cloud in a new package called pcl_test_andrew in the Interaction Lab svn repository. I also discussed alternates to the third project for this summer that would be applicable to <a href="pr.htm">PR Lite</a> as well as the Interaction Lab. The ideas we came up with were making the <a href="http://ros.org/wiki/turtlebot_block_manipulation">turtlebot_block_manipulation</a> demo work on PR Lite and combining (or at least transforming to the same tf frame) the data from PR Lite's Kinect and tilting lidar.</p>
+<p>6/24/2012<br/>
+I finally finished a draft of the <a href="interactionwiki.txt">wiki page</a> for the package, and sent an email to Ross about my remaining questions.</p>
+<p>6/9/2012<br/>
+I made new launch files in the multi_calibrate_interaction package to replace the calibrate_X_kinects.sh shell scripts, added error checking to the yaml file code, and updated some documentation.</p>
+<p>5/21/2012 - 5/25/2012<br/>
+On Wednesday, I wrote an initial attempt at storing the Kinect calibrations in a yaml file instead of a bag file. On Friday, I improved how the code transforms calibrations to each other so that it doesn't store duplicates of camera entries. I want to test this latest code myself a little more, and after that it should be tested with several Kinects in the Interaction Lab since I only have 2 Kinects at home.</p>

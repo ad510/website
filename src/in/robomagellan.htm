@@ -1,0 +1,43 @@
+<div>Members of the AHS Robotics Club made a robot named <i>Myrmecophaga tridactyla</i> to enter into the <a href="http://robogames.net/rules/magellan.php">RoboMagellan</a> competition at <a href="http://robogames.net">RoboGames</a> in 2010. In the competition, autonomous robots drive around obstacles to <span style="text-decoration: line-through">touch cones</span> taste food placed about 300 feet away, given only the GPS coordinates of the <span style="text-decoration: line-through">cones</span> food. It is the robot hobbyist's version of an autonomous <span style="text-decoration: line-through">car</span> living being.<!-- The robot might be demoed at the <a href="http://makerfaire.com/pub/e/2512">Maker Faire</a> after the competition at RoboGames.--></div>
+<p>I released the source code that we used in the competition, with a few minor updates. You can <a href="http://downloads.sourceforge.net/anteaterbot/magellan-v2.tar.gz">download</a> it from SourceForge.</p>
+<p style="text-align:center"><object type="application/x-shockwave-flash" data="https://www.youtube-nocookie.com/v/0D-1qm6FVZU&amp;ap=%2526fmt%3D18" width="480" height="385"><param name="movie" value="https://www.youtube-nocookie.com/v/0D-1qm6FVZU&amp;ap=%2526fmt%3D18"/></object><!--<a href="http://flickr.com/photos/rockbandit/3623360489/sizes/l/in/set-72157619574903249"><img src="http://farm4.static.flickr.com/3383/3623360489_e50fc8ef98.jpg" alt="Myrmecophaga tridactyla at RoboGames 2009"/></a><br/>
+photo taken by <a href="http://rockbandit.net">Dave Schumaker / RockBandit</a>--></p>
+<p><span class="h2">2010 competition:</span><br/>
+We won the <a href="http://robogames.net/2010.php">silver medal</a> at the 2010 RoboMagellan competition, though sadly no one touched the cone unlike in previous years. Strangely, the robot performed much worse during the competition than in our practice runs in the days before it, probably due to a magnetic source around the field confusing the compass. (Update: Other robots had similar problems in 2011, confirming this hypothesis. If you plan to enter RoboMagellan, don't use a compass!) You can watch videos of its runs below.</p>
+<p style="text-align:center"><object type="application/x-shockwave-flash" data="https://www.youtube-nocookie.com/v/59-1dQVNDAM&amp;ap=%2526fmt%3D18" width="480" height="385"><param name="movie" value="https://www.youtube-nocookie.com/v/59-1dQVNDAM&amp;ap=%2526fmt%3D18"/></object> <object type="application/x-shockwave-flash" data="https://www.youtube-nocookie.com/v/adUQLU9vAeI&amp;ap=%2526fmt%3D18" width="480" height="385"><param name="movie" value="https://www.youtube-nocookie.com/v/adUQLU9vAeI&amp;ap=%2526fmt%3D18"/></object> <object type="application/x-shockwave-flash" data="https://www.youtube-nocookie.com/v/G1okP4_C4ho&amp;ap=%2526fmt%3D18" width="480" height="385"><param name="movie" value="https://www.youtube-nocookie.com/v/G1okP4_C4ho&amp;ap=%2526fmt%3D18"/></object></p>
+<div><span class="h2">Hardware parts as of 4/9/2010:</span></div>
+<ul>
+<li>FPGA for sensor monitoring</li>
+<li><a href="https://en.wikipedia.org/wiki/OLPC_XO-1">OLPC laptop computer</a></li>
+<li><a href="http://www.parallax.com/Store/Robots/RoboticAccessories/tabid/145/ProductID/507/List/1/Default.aspx">Parallax Motor Mount and Wheel Kit with Position Controller</a></li>
+<li><a href="http://www.parallax.com/Store/Accessories/MotorServoControllers/tabid/160/ProductID/64/List/0/Default.aspx">4 Parallax HB-25 Motor Controllers</a></li>
+<li><a href="http://www.acroname.com/robotics/parts/R267-CAM2-TURRET.html">turret for cmucam3 and other sensors</a></li>
+<li><a href="http://www.seattlerobotics.com/cmucam3.htm">cmucam3</a> with <a href="http://www.seattlerobotics.com/CMUcam3_datasheet.pdf">MMC card</a></li>
+<li><a href="http://www.acroname.com/robotics/parts/R287-SRF02.html">4 Devantech SRF02 (Sonar Sensors)</a></li>
+<li>8 Sharp Infrared Sensors (8-60")</li>
+<li><a href="http://www.trossenrobotics.com/store/p/5440-GP2Y0A02YK-IR-Sensor-Kit-8-60-inches-8-sensors.aspx">Phidgets 8/8/8</a></li>
+<li><a href="http://www.vexlabs.com/vex-robotics-design-system.shtml">vex microprocessor, transmitter, rcvr, erector set</a></li>
+<li><a href="http://www.amazon.com/GlobalSat-BU-353-WaterProof-Receiver-SiRF/dp/B000V5TV22">GlobalSat BU353 USB GPS</a></li>
+<li><a href="https://www.sparkfun.com/commerce/product_info.php?products_id=741">IMU 5 Degrees of Freedom</a></li>
+<li><a href="http://www.acroname.com/robotics/parts/R117-COMPASS.html">i2c compass</a></li>
+<li>5 servos</li>
+<li><a href="http://www.amazon.com/Startech-Provides-Ability-Multiple-High-performan/dp/B000JFHJ6O/ref=sr_1_1?ie=UTF8&amp;s=electronics&amp;qid=1205127744&amp;sr=1-1">Lynxmotion parts for arm</a></li>
+<li><a href="http://www.acroname.com/robotics/parts/R255-TPA81.html">Devantech TPA81 8x1 Thermopile Array</a></li>
+<li>hall effect sensor for arm height</li>
+<li>wood frame</li>
+<li><a href="http://www.amazon.com/Startech-Provides-Ability-Multiple-High-performan/dp/B000JFHJ6O/ref=sr_1_1?ie=UTF8&amp;s=electronics&amp;qid=1205127744&amp;sr=1-1">4 port USB multiplexer</a></li>
+<li><a href="http://www.robot-electronics.co.uk/htm/usb_i2c_tech.htm">i2c to usb</a></li>
+<li><a href="http://www.acroname.com/robotics/parts/S22-USB-SERIAL-INT-CONN.html">usb to ttl/serial</a></li>
+<li>12 to 7.2 voltage regulator</li>
+<li>12 volt smart charger</li>
+<li>12 volt Sealed Lead-Acid battery</li>
+</ul>
+<p><span class="h2">Contributors:</span><br/>
+Andrew Downing (me): high-level software<br/>
+Robert Ou: low-level daemon software<br/>
+Matthew Downing: hardware<br/>
+Alan Downing and Frank Ou (fathers): mentors</p>
+<p><span class="h2">Former contributors:</span><br/>
+Venkataram Apparao: hardware<br/>
+Asheem Linaval: hardware and camera software<!--<br/>
+Asad Rathore: general helper (for now)--></p>

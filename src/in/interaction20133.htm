@@ -1,0 +1,35 @@
+<div><a href="interaction.htm">Interaction Lab home</a></div>
+<p><span class="h2">Fall 2013-spring 2014 milestones:</span></p>
+<ol>
+<li>Fix remaining bugs in the multitrack_model package. (done 12/13/2013)</li>
+<li>Make a ROS package or node to evaluate the accuracy of multitrack_model.</li>
+<li>Work with Ross on a paper about the multi-Kinect skeleton tracking system.</li>
+<!--<li>Make a Windows port of the multi-Kinect skeleton tracking system.</li>-->
+</ol>
+<p><span class="h2">Updates:</span></p>
+<p>12/17/2013 (worked 1.3 hours)<br/>
+I talked with Ross about how we'll evaluate the person classifier models to determine their classification accuracy.</p>
+<p>12/13/2013 (worked 3.4 hours)<br/>
+I fixed some bugs in the discriminant classifier from 11/22, and now it works!</p>
+<p>11/18/2013, 11/22/2013 (worked 3.5 hours)<br/>
+I discussed the issues with the discriminant classifier with Ross, and he suggested a different, simpler way to make a discriminant classifier. However, when I implemented it, it still didn't work! I still need to think through why it didn't work, and I haven't ruled out a bug in my code.</p>
+<p>11/15/2013 (worked 4.9 hours)<br/>
+I discussed our plans going forward with Ross, and implemented our new idea for a discriminant person classifier. This version doesn't crash, but it still returns incorrect results for more subtle reasons explained in an email to Ross. The old non-discriminant classifier still works remarkably well.</p>
+<p>11/8/2013<br/>
+I sat in the lab for an hour or two, but couldn't concentrate on anything (maybe because I had 2 tests that week?). Sorry about that.</p>
+<p>11/1/2013 (worked 2.2 hours)<br/>
+Earlier in the week, I went to a professor's office twice to ask about the statistics issue in the person tracker, since I still hadn't gotten a reply from Amin. Unfortunately the professor was very busy and I didn't get to talk to him much. On 11/1, I had a productive meeting with Ross and someone else (todo: what's his name?) and we came up with a couple potential ways to solve the issue, though I'm not sure I'm completely satisfied with either of them.</p>
+<p>10/25/2013 (worked 1.9 hours)<br/>
+In the skeleton tracker, I implemented letting you pick the Kinect either by index or bus/address, whereas previously you could only pick it by index. (I wrote this using the simple way I thought of and threw out the non-working code I wrote on 10/18.)</p>
+<p>10/18/2013 (worked 2.0 hours)<br/>
+I figured out a simple way to add support in openni_multitracker2 (the modified skeleton tracker I use) for specifying the Kinect by bus/port address instead of just by device number, which frequently changes when the Kinect is unplugged and replugged. However, I instead tried to implement this in a more complicated way since I also wanted to support specifying the Kinect by serial number, which I wasn't able to get working by the time I had to leave for a class. (The naive way of trying to get the serial number doesn't work for Kinects.)</p>
+<p>10/8/2013, 10/11/2013 (worked 1.8 hours)<br/>
+I talked to Amin about the statistics issue on 10/8, and he saw the problem (that the probability density function doesn't really output probability so it is allowed to output values greater than 1) but needed more time to think about what is the right way to fix it. (As of 11/13, he's been too busy to schedule a follow up meeting.) Since this issue was blocking work on the person classifier, on 10/11 I started looking into improving the skeleton tracker itself and integrating it with OpenNI 2.</p>
+<p>10/3/2013 - 10/4/2013 (worked 4.0 hours)<br/>
+I did some experimenting and found what occasionally caused bad checkerboard and joint tracking calibrations. I also implemented inverting some of the terms in the denominator of the person classifier algorithm, as discussed in a previous meeting. However, this caused frequent crashes, the details of which are explained in an email to Ross.</p>
+<p>9/26/2013 (worked 2.0 hours)<br/>
+I was tired, so I made a lot of mistakes and as a result didn't make much progress.</p>
+<p>9/19/2013 - 9/20/2013 (worked 6.5 hours)<br/>
+On 9/19, I modified the person classifier to consider the likelihoods that tracked skeletons are not associated with hypothetical skeletons. However, when running it, it grouped the skeletons incorrectly (in a different way than on 8/30), and some of the log likelihoods were well above 0. On 9/20, I added some hacks to make the classifier behave like it did on 8/30, while keeping the code reorganization that I did on 9/19. This version behaved reasonably, but running the 9/19 version still had the same problems after running it with a new calibration.</p>
+<p>8/30/2013 (worked 4.2 hours)<br/>
+I fixed the normalizing correction term in the multitrack_model person classifier. However, after running it, it had a tendency to incorrectly classify all skeletons from different Kinects as different people. As of 9/20, I now suspect we just had the Kinects badly calibrated to each other that day.</p>

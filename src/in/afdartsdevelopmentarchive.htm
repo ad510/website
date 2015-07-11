@@ -1,0 +1,58 @@
+<div><a href="afdartsdevelopment.htm">back to Afdarts development</a></div>
+<p><span class="h2">Archived 6/17/2010:</span></p>
+<p><span class="h3">Current roadmap:</span><br/>
+For a while, I was planning to add walls, but I realized that the implementation I was planning was very complicated and decided to save it for later. Instead, I am currently planning for the 1.1.x releases to focus on tactical combat. Please note that I am also working on other projects that have priority over Afdarts.</p>
+<p>1.1.2 alpha (done!): Port the game to Visual Basic 2005 and use DirectX 9.</p>
+<p>1.1.3 alpha (done!): After taking health, individuals cannot move or take health for a set length of time. This makes melee tactics more interesting because it makes units effectively block opponent units from passing through them easily.</p>
+<p>1.1.4 alpha (done!): <!--Replace my triggers system with Lua and write a new faction AI in Lua.-->Improve the faction AI. I am planning a fuzzy logic algorithm in which each opponent unit has an attraction (or repulsion) force on each faction AI unit.</p>
+<p>1.1.5 alpha (done!): Fix the bug-ridden projectile implementation. <span style="text-decoration: line-through">Implement fire at will.</span></p>
+<p>1.1.6 alpha: Implement morale, making units run away if they are losing individuals too quickly. Make hero individuals which are better than normal ones and affect the morale of the entire faction.</p>
+<p>1.1.7 beta: Implement grouping. Add a tutorial and new music.</p>
+<p>1.1.8 beta and later: Add scenarios and fix bugs.</p>
+<p>1.2.0 alpha: Port the game to C# 2010.</p>
+<p><span class="h2">Archived 12/30/2009:</span></p>
+<p><span class="h3">Potential future features:</span><br/>
+I like working on Afdarts, but I do not know how long I will continue to. After I finish implementing walls, I might add multiplayer, height advantage, fatigue, morale, better economy. I am thinking of changing the resource types to food and stone, where units cost food and buildings and walls cost stone. To prevent unit spamming, perhaps the primary way of getting resources could be automatically getting it at a fixed rate, though cutting down trees might give a little bit of resources.<!-- If a player runs out of food, that player's units would slowly lose health.--></p>
+<!--<p><span class="h3">Version 2 Ideas:</span><br/>
+There are some deep code changes I want to make to Afdarts, which will require require rewriting much of the code. If I do these, I might as well do a complete rewrite into C++, which is my plan if I make an Afdarts 2. Here is an incomplete list of changes I want to make:</p>
+<ul>
+<li>Make the code better written and more modularized.</li>
+<li>Add better support for waypoints. This way, units can rotate before moving to their destination, reducing the number of collisions the program has to check for.</li>
+<li>Don't make groups strictly pre-defined. The current implementation even makes it tricky to delete (not take health from) or resize units.</li>
+</ul>
+<p>I might continue using version 1 as a testbed for new features such as walls. If I make version 2, version 1 will probably have more features for a while but they will be better implemented in version 2.</p>-->
+<p><span class="h2">Archived 8/21/2008:</span></p>
+<!--<p class="hidden">
+<span style='font-size:18pt'>Afdarts RTS - andrewd.50webs.com</span>
+</p>
+<span class="h3">About the Game</span>
+<br/>
+The readme file contains more important information than this document, but you should read both the readme and this document before reporting problems or suggestions.  This is separate from the readme because it contains content that I am likely to update more often.  If you are not familiar with RTS games, read the <a href="#tutorial" >Tutorial</a> section.  Otherwise, read the Quick Start section.  Then, read over what I would like help on.
+<p>-->
+<div><span class="h3">Quick Start:</span><br/>
+Review the controls section of the readme, which can be accessed in-game. Your units are brown while enemy units are usually gray. Only papers can collect resources and make buildings, but only rocks or scissors can harm buildings. Slings have roughly the effect of scissors for balancing reasons. There is no fire at will or aggressive stance. (How important are these?)<br/>
+</div>
+<!--<div><span class="h3">What I have done since the released version:</span></div>
+<div style="white-space:pre-wrap">nothing so far</div>-->
+<p><span class="h3">What I might do (how much do you need these?):</span> groups of units moving form a line, implement fire at will and/or aggressive stance, add volume options, let users pick where to place buildings</p>
+<p><span class="h3">What I won't do yet:</span> add multiplayer (v1.1 maybe?), add hills (v1.2 maybe?), add walls (v1.2 maybe?), improve the scenario editor (v2 maybe?, and anyway you can edit scenarios with a text editor)</p>
+<p><span class="h3">What you can help on:</span><br/>
+<i>What I mostly want to know is about problems I may have overlooked so people do not complain about the version 1 release.</i> Please read the readme before reporting any problems. Do not report any problems already here or on the known issues section of the readme, but if you can add anything to those or have a solution, then put it on the SourceForge.net <a href="http://sourceforge.net/tracker/?group_id=205750">tracker</a> or <a href="http://sourceforge.net/forum/?group_id=205750">forums</a> or <a href="emai1.htm">&#x65;&#109;&#97;&#105;&#x6c; me</a>.</p>
+<!--<p>
+If you make a scenario worth including with the game, let me know. My guidelines are that it should be beatable on easy without pausing and beatable on hard with or without pausing.  If you want to change the map size, try opening the scenario with Notepad. The first three numbers are the width, height, and simulation width/height of the map. Adjust these proportionally (so if the new width is 40, then the height should be 40 and the simulation size should be 4000000).-->
+<p>Here is my current plan for the storyline of the campaign. The AI is fairly fast, so to train players the 1st mission is about defeating a wood camp owned by a gray enemy tribe which has started wandering into a forest owned by the player. In the 2nd mission, the gray tribe wants revenge. In the 3rd mission, the player tries to get help from a painted tribe in the mountains (large plateau units in the resources faction) but the tribe turns out to be unfriendly. In the 4th mission, the player, a few people from the painted tribe who escaped, another painted tribe, and the gray tribe meet. They all dislike each other. In the 5th and last mission, the player and the second painted tribe agree to work together to attack the gray tribe. Pausing the game to give commands is recommended if you are playing at the hard difficulty level or if you are playing the last mission.</p>
+<p>I am quite sure that the crashes in versions 0.3.2 beta and 0.3.3 beta are caused by a feature that lets new units sometimes replace existing units.  I disabled this feature in later versions when compiled, but it is still on in the IDE in case I get rid of the crashes. If you have Visual Basic 6 and want to look into this, play the game in the IDE with the constant "DebugMode" in modFc.bas set to True. This will make the game lose some functionality, but makes debugging easier.  I suggest testing on "lag demo.scn" for long games in which the AI plays for you. If the game crashes in the IDE and the problem is not an automation error, please tell me when it happened (probably opening a new scenario or making a new unit), the type of error, the sub-routine and line the error occurred on, and the value of each variable on that line (hover the mouse over each variable).</p>
+<p><span class="h3">Tutorial:</span><br/>
+Version 1 will include a tutorial, but there are currently no directions as to what to do. In the game, open the tutorial scenario and follow the directions below. To access these while playing press alt-tab. Please tell me if you have a suggestion, though I plan the only conditions to be unit(s) is selected or at a certain location and the only actions to be displaying a different message.</p>
+<p>Welcome to Afdarts.  The default theme is rock-paper-scissors, but I encourage you to make your own.  A group is called a unit.  By default, your units are brown and enemy units are gray.  You currently have one unit of paper, while the enemy has one unit of scissors.  Scissors beats paper, so we must make something to defeat them.  To begin, left-click your paper to select them.</p>
+<p>Good.  Now right-click to move them.</p>
+<p>Look at the bottom-left corner of the screen.  There is a label telling you how much wood you have, and button(s) to make more units (which costs wood).  Papers can make buildings, so click the building icon now.</p>
+<p>Good.  Now left-click your building to select it.</p>
+<p>Buildings make most of your units, but cannot move or take health.  Only rocks and scissors can harm them.  Hover over the rock icon.  Notice that text appears telling how much wood you need.  You need 50 wood to make rocks, but you only have 40.  Select the paper again to continue.</p>
+<p>Paper can collect wood.  To collect wood, make sure you have a unit of paper selected and right-click in the trees.</p>
+<p>While you wait until you have enough wood, try moving the camera.  Use the arrow keys to move, a and d to rotate, and w and s to zoom in and out.  You can also move the camera by moving the mouse to the edges of the screen or by middle-clicking and dragging up and down.  When you are done, select your building.</p>
+<p>You should now have enough resources to make rocks.  Click the rock icon to make rocks and the slings icon to make slings.</p>
+<p>You can select multiple units by left-clicking and dragging a box around your units.  Do this to select your rocks and slings, but not your building or paper.</p>
+<p>You can move units in formation by right-clicking and dragging a line on the ground.  Right click at the lone tree and without releasing the mouse button drag to the group of 2 trees, then let go.</p>
+<p>Very good.  For balancing reasons, slings shoot bits of metal, which have roughly the effect of scissors.  However, these objects can also harm friendly units, so you should use slings against units no one else is attacking.  Slings can also fight up close, but not effectively.  Select the slings and right-click the scissors to tell them to shoot there.</p>
+<p>Good.  Your best plan now is to send your rocks followed by your slings in close-up combat.  Normally, right-clicking an enemy unit will send units in close-up combat, but to do this with slings requires you to be holding alt while you click.  If this plan sounds daunting, use p to pause or resume.  You win when there are no more enemy units.  Good luck.</p>

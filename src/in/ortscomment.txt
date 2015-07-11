@@ -1,0 +1,33 @@
+. . . I made an entry for the game 4 category of the O R T S R T S Game AI competition.  This clip shows the entry playing itself.
+.
+First, units form 2 lines based on their range.  Since tanks, the larger circles, have a greater range than marines, the smaller circles, tanks go behind the marines.  If you look carefully, you may notice that the units are slowly moving toward neighboring units.  In O R T S, it is best for units to be the same distance from their closest enemy unit, and a compact line is the best formation to do this.  While approaching, units try to stay about the same distance from their neighbor.  To make it easy to find who a unit's neighbor is, my client makes an array sorting its units by their y value at the beginning of each game.  Units also try to avoid forming clumps because clumps let units at the edge get picked off and because clumps hinder movement.  If a unit gets too close to a neighbor or collides with another unit, it will move perpendicularly to its current movement away from the unit it is colliding with.
+.
+The lines move slowly to give enough time to form good lines.  However, units should try to get onto the line as quickly as possible.  My entry does this by calculating an ideal distance for everyone to be from their closest enemy unit, excluding range.  This distance slowly decreases, but considers the speed that enemy units approach to avoid moving too quickly when the opponent approaches slowly, or moving backwards when the opponent approaches quickly.
+.
+Now that the units are in range, the tanks switch into siege mode for a greater range and a more powerful attack.  The marines fear siege tanks at the moment and stay just out of range of them while still following the closest enemy unit.  A side effect of this tends to be miniture skirmishes between marines at the flanks of the main armies.
+. . .
+Red's marines are charging.  Despite their great attack, tanks in siege mode cannot move and have a minimum range, potentially making them vulnerable to marines.  Marine charges have to be timed just right to be effective.  My entry charges when a quarter of the enemy marines or half of the enemy tanks remain.
+.
+Now Green's marines are charging.  Red has more siege tanks remaining, but Green has more marines.  Let's see what happens.
+. . .
+My entry's tanks switch out of siege mode when a unit gets within it's minimum range, letting them pick off any marines.  This time, the charge failed for the most part.
+. . .
+This next clip shows my entry playing the University of Alberta's entry from last year using 2007 tournament files.  In 2007, game 4 only had marines, not tanks.  The University of Alberta's game 4 entry got 5th place last year with 8 competitors, and its makers admit they did not put much time specifically into this entry.  My main advantage over this entry is that I form better lines, but for a while I had trouble beating it.
+. . .
+One problem I had was that the opponent's single units would move away from the main group, enticing many marines to follow them.  Since it takes 8 marine shots to kill a marine, I now only let 8 units maximum follow one unit.  This is now much less of a problem.
+.
+Since almost all of the opponent's units are chasing after one of my marines, I have an opportunity to form a good line again.  If my units are on average more than a certain distance away from the opponent, the ideal distance for everyone to be from their closest unit will be re-calculated.  Since the order units should be in calculated on the 1st frame is probably now outdated, units now use a different method to avoid clumping.  If someone is where a unit wants to be, the unit moves to its right until it finds a spot where it fits in the line.
+. . .
+My entry has long told units to move out of range while reloading and only move in range when done reloading, but for a long time units thought that their range was less than it really was.  Fixing this bug was the key to beating the University of Alberta's game 4 entry from 2007.  Too bad I am having touble compiling the winner's entry on Windows.
+. . .
+Forming good lines is not the only strategy my entry can use.  If used correctly, good clumps of siege tanks can be just as or even more effective.  The theory is that the tanks in the corner already in siege mode get to shoot while opponent tanks switch into siege mode, making the return fire less effective.  In this clip, my entry on the left tries to form a clump in the corner.  It forms a vertical line of marines that slowly moves toward the edge and a grid of tanks that slowly moves toward the corner.  When the tanks are sufficiently in the corner, they switch into siege mode and the marines form a line around them.  If the opponent does not seem to approach, my corner mode entry will switch back into line mode.  In fact, I had to capture this clip on a smaller map to avoid this happening.
+.
+Clearly, it will take a long time for Red to approach, so let's take this opportunity to discuss the learning algorithm.  Entries this year are allowed to store files in the directory game-data.  After each game, my entry saves a 4-line file to andrewd_game4.txt containing the total games played by each strategy and the total games won.  If the file does not exist, each strategy starts out winning 1 out of 1 games to avoid crashes and other confusion.  Since the O R T S competition is run highly concurrently, a locking mechanism is used to make sure that the file does not become corrupt.  At the beginning of each game, my entry loads this file and uses a random number to pick a strategy.  The chance of a strategy being picked depends on the percentage of games it won.
+.
+Red's marines are forming such a good line out of siege tank range that Red's tanks are having trouble getting in range.  Once one does, however, Green's marines are told to simultaneously charge.  Though Red's tanks can shoot at the marines as they charge, this at least gives Green's marines some use.
+. . .
+Now it is Red's turn to charge.
+. . .
+Especially for the mighty siege tanks, it is important to aim at the best place possible.  In O R T S, a unit's hit points does not affect how much damage it does, making it best to pick off units one by one.  Units shoot at the unit in range with least hit points, but siege tanks do not consider neighboring units to take advantage of the size of their explosion.  Maybe I will implement this next year.
+. . .
+This next clip shows my current entry playing my original client after working on it for 1 day.  Enjoy.

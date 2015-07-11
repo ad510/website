@@ -1,0 +1,117 @@
+<div>How would you like a robot that can <a href="http://www.willowgarage.com/blog/2010/06/15/pr2-plays-pool">play pool</a>, <a href="http://www.willowgarage.com/blog/2010/04/02/towels-uc-berkeley">fold towels</a>, and <a href="http://www.willowgarage.com/blog/2010/07/06/beer-me-robot">bring you a drink</a> from the fridge? We'd like one too, but we don't want to spend $400,000 for the <a href="http://willowgarage.com/pages/pr2/overview">PR2</a> from Willow Garage. PR2 was built with high end components so that research on robotics software could progress in anticipation of ultra low cost components becoming available down the road. In many ways, that day has already arrived, as embodied by the $150 Kinect and the low-cost lidar used by the Neato robotic vacuum cleaner. These new sensors and other servos with feedback like the AX-12+ servos enable a personal robot with PR2-like capabilities to be within reach of a robotics club. Furthermore, the <a href="http://ros.org">ROS</a> software provides much of the intelligence and glue to make this goal a reality. This was the goal when we combined the resources and capabilities of four high school roboticists and their mentor fathers to produce PR Lite.</div>
+<p>After I started college, PR Lite was upgraded to a new robot called PR2 Lite. Read the latest updates at <a href="https://mattdowning.wordpress.com">Matthew's blog</a>! Also, PR Lite is featured in the <!--link was previously http://servomagazine.com/index.php/magazine/issue/2011/12--><a href="http://www.servomagazine.com/media-files/PR-Lite.pdf">December 2011</a> and <a href="http://www.servomagazine.com/uploads/issue_downloads/PR2-Lite.pdf">August 2013</a> issues of Servo Magazine!</p>
+<p><span class="h2">Software repositories:</span> <a href="https://github.com/rqou/prlite-pc">PC code</a> and <a href="https://github.com/rqou/prlite-avr">AVR code</a><br/>
+<span class="h2">Hardware specifications:</span> <a href="https://docs.google.com/viewer?a=v&amp;pid=explorer&amp;chrome=true&amp;srcid=0B5MTrNjN0zYuOThlNzA5YmItZjJhZS00NjU1LTkyYzQtZmJiYWQwMTEwZTk2&amp;hl=en_US">microcontrollers</a> and <a href="prwheelbase.pdf">wheel base</a></p>
+<p style="text-align:center"><img src="pr2lite.jpg" alt="PR2 Lite"/><br/>
+PR2 Lite at RoboGames 2012 (photos taken by Tim Craig)</p>
+<p style="text-align:center"><img src="pr.jpg" alt="PR Lite and PR2 photo"/><br/>
+PR Lite at RoboGames 2011 (<a href="https://picasaweb.google.com/downingbots/PRLite">view more photos</a>)</p>
+<p><span class="h2">Comparison with PR2:</span><br/>
+As shown in the table below, the capabilities of PR Lite are analogous to those of PR2, but are lower quality.<!-- You can read more about PR Lite's hardware <a href="prhardware.htm">here</a>.--></p>
+<table border="1">
+<colgroup span="3">
+<col width="100"/>
+<col width="200"/>
+<col width="200"/>
+</colgroup>
+<tbody>
+<tr>
+<td></td>
+<td><b>PR Lite</b></td>
+<td><b>PR2</b></td>
+</tr>
+<tr>
+<td>head camera</td>
+<td>Kinect (2 cameras with LED texture projector for 3D vision)</td>
+<td>3 cameras with LED texture projector for 3D vision</td>
+</tr>
+<tr>
+<td>base lidar</td>
+<td>Neato</td>
+<td>Hokuyo UTM-30LX</td>
+</tr>
+<tr>
+<td>tilting lidar</td>
+<td>Hokuyo URG-04LX-UG01</td>
+<td>Hokuyo UTM-30LX</td>
+</tr>
+<tr>
+<td>arm DOF</td>
+<td>5 (shoulder pan, tilt, elbow, wrist rotate, left finger, right finger)</td>
+<td>7 (includes forearm and upper arm roll)</td>
+</tr>
+<tr>
+<td>arm payload</td>
+<td>2.5 lbs</td>
+<td>4 lbs</td>
+</tr>
+<tr>
+<td>number of arms</td>
+<td>2</td>
+<td>2</td>
+</tr>
+<tr>
+<td>drive system</td>
+<td>forward with differential steering; spin in place; sideways with differential steering</td>
+<td>holonomic</td>
+</tr>
+<tr>
+<td>torso</td>
+<td>12" telescopic</td>
+<td>12.3" telescopic</td>
+</tr>
+<tr>
+<td>computer</td>
+<td>i7 quad-core with hyper-threading, 6 GB memory, 60 GB solid state drive</td>
+<td>two i7 quad-core, 24 GB memory, 2 TB disk space (all 2x)</td>
+</tr>
+<tr>
+<td>network</td>
+<td>8 USB ports, I²C</td>
+<td>EtherCAT</td>
+</tr>
+<tr>
+<td>batteries</td>
+<td>five 12v Lead-Acid; 30 min runtime</td>
+<td>Lion; 2 hour runtime</td>
+</tr>
+<tr>
+<td>software</td>
+<td>ROS</td>
+<td>ROS</td>
+</tr>
+<tr>
+<td>joystick control</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>wireless</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>IMU</td>
+<td>Sparkfun 6 DOF*</td>
+<td>Microstrain 3DM-GX2</td>
+</tr>
+<tr>
+<td>arm cameras</td>
+<td>webcam*</td>
+<td>Ethernet camera</td>
+</tr>
+</tbody>
+</table>
+<p>* part currently not installed on robot</p>
+<p><span class="h2">RoboGames 2011 demo:</span><br/>
+Our completed PR Lite prototype was demoed at <a href="http://robogames.net">RoboGames</a> 2011, occupying the booth next to Willow Garage and PR2! Our demo featured PR Lite's arms mimicking a person's arms. A Kinect used the OpenNI library to find the subject's skeleton. This skeleton was transformed into spherical coordinates (with a radius), and inverse kinematics were used to position PR Lite's arms. The arms were made from the Bioloid comprehensive kit constructed to be similar to two Crustcrawler arms. ROS packages from the University of Arizona were then used to control the arms.</p>
+<p style="text-align:center"><object type="application/x-shockwave-flash" data="https://www.youtube-nocookie.com/v/0HWK5HftHQE" width="480" height="385"><param name="movie" value="https://www.youtube-nocookie.com/v/0HWK5HftHQE"/></object></p>
+<p><span class="h2">Future plans (as of 4/28/2011):</span><br/>
+The initial PR Lite prototype was finished only barely in time for RoboGames. Many enhancements are planned to make PR Lite even more like PR2. We also want to harden the prototype against loose wires and bolts by fabricating some boards, and replacing many of the Bioloid construction kit parts with simple bent aluminum bars. Most of all, we want to take advantage of our advanced capabilities by doing our own hackathons!</p>
+<p><span class="h2">Contributors:</span><br/>
+Andrew Downing (me): navigation, high-level wheel controller<br/>
+<a href="https://mattdowning.wordpress.com">Matthew Downing</a>: prototype construction, CAD modeling<br/>
+<a href="https://teknoman117.wordpress.com">Nathaniel Lewis</a>: arms, Kinect<br/>
+<a href="https://someh4x0r.wordpress.com">Robert Ou</a>: low-level wheel controller, firmware<br/>
+Alan Downing, Frank Ou, and Michael Lewis (fathers): mentors and miscellaneous</p>
+<div style="text-align:center"><img src="prcontributors.jpg" alt=""/></div>

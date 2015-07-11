@@ -1,0 +1,31 @@
+<<PackageHeader(multi_calibrate)>>
+
+== Overview ==
+The multi_calibrate package contains a modified version of the tf publisher from the [[camera_pose_calibration]] package. Unlike the original, it does not require that all of the cameras see the checkerboard at the same time to be able to calibrate to each other. It also saves the calibrations to a yaml file instead of a bag file to allow manual editing of calibrations, and includes an openni_launch-specific "hack" to allow tf transforms between Kinect depth frames after their RGB cameras are calibrated to each other. (Cameras other than Kinects can still be calibrated to each other normally.)
+
+== Installation ==
+First, install the [[camera_pose_calibration#Installation | camera_pose_calibration]] package.
+
+The multi_calibrate package can be (note: repository instructions)
+
+The multi_calibrate package doesn't need to be built after it is downloaded because it only uses scripting languages.
+
+== Usage ==
+=== Launch file setup ===
+Since this package uses a modified tf publisher, your launch file needs to include multi_calibrate's tf publisher rather than camera_pose_calibration's:
+
+~-{{{
+<launch>
+  ....
+  <include file="$(find multi_calibrate)/launch/calibration_tf_publisher.launch">
+    <arg name="cache_file" value="/tmp/camera_pose_calibration.yaml" />
+  </include>
+</launch>
+}}}-~
+
+Note that for human readability, the calibrations are saved and loaded from a yaml file rather than a bag file. You may want to save this in a directory other than /tmp so that it is not deleted after a reboot.
+
+=== Running calibration ===
+The process to calibrate cameras to each other is similar to [[camera_pose_calibration#Running_calibration | that of camera_pose_calibration]], including the requirement that all of the cameras specified in the arguments to calibrate_X_camera.launch (X being 2, 3, 4, or 5) can see the entire checkerboard simultaneously. The key difference is that if calibrate_X_camera.launch is run again with different cameras after a previous calibration is completed, instead of replacing the previous calibration, multi_calibrate will try to find a camera shared by the calibrations and merge the calibrations together. If this is not possible, the calibration will be stored separately and published to a different tf frame beginning with `/world`.
+
+Note that multi_calibrate will not change or delete the poses of cameras it has already stored. If more than one camera is shared between calibrations, the rest of the new camera poses will be merged based on the transformation between only one of the shared cameras, and the new poses of all of the shared cameras will be discarded. If you want to change or delete camera poses that are already stored, you will need to edit the yaml cache file manually.

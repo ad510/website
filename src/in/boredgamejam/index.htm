@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+ <head>
+  <title>Bored Game Jam</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <script type="text/javascript" src="common.js">
+  </script>
+  <script type="text/javascript">
+/*
+image credits: (these are all CC-BY-SA or public domain, so probably no licensing issues)
+http://en.wikipedia.org/wiki/File:Monticola_gularis_male_non-breeding_-_Khao_Yai.jpg
+http://en.wikipedia.org/wiki/File:Mammal_Diversity_2011.png
+http://en.wikipedia.org/wiki/File:American_bison_k5680-1.jpg
+http://en.wikipedia.org/wiki/File:Hereford_bull_large.jpg
+
+I am licensing the following images (which are based on the images linked to above) under a Creative Commons Attribution-ShareAlike 3.0 Unported License:
+http://andrewd.50webs.com/boredgamejam/game0.png
+http://andrewd.50webs.com/boredgamejam/game1.png
+http://andrewd.50webs.com/boredgamejam/game2.png
+http://andrewd.50webs.com/boredgamejam/game3.png
+
+by the way, at one point I set body background color to rgb(100, 200, 50) but originally background color wasn't set and I think I prefer it that way
+*/
+
+var JamRad = 20;
+var GameRad = 50;
+
+var xMouse;
+var yMouse;
+var mouseDown = false;
+
+var frame = 0;
+
+var game = [];
+var jam = [];
+
+function start() {
+ alert("I had a few hours to make a game for a board game jam, but I didn't want to make a board game so I found an excuse to make a computer game instead...\n\n"
+       + "On the screen you will see GAME (as in hunting game). But they are BORED. Click and drag to place BORED GAME JAM and un-bore them!");
+ setInterval("update();", 40);
+}
+
+function mouseMove(e) {
+ getMousePos(e);
+ if (mouseDown && Math.random() < 0.2) {
+  // place jam
+  var ins = jam.length;
+  jam[ins] = [];
+  jam[ins].x = xMouse;
+  jam[ins].y = yMouse;
+  jam[ins].div = document.createElement("div");
+  jam[ins].div.style.position = "fixed";
+  jam[ins].div.style.left = (jam[ins].x - JamRad) + "px";
+  jam[ins].div.style.top = (jam[ins].y - JamRad) + "px";
+  jam[ins].div.style.width = (JamRad * 2) + "px";
+  jam[ins].div.style.height = (JamRad * 2) + "px";
+  jam[ins].div.style.backgroundColor = "red";
+  document.getElementById("jl").appendChild(jam[ins].div);
+ }
+}
+
+function update() {
+ frame++;
+ // collision detection
+ for (var i = 0; i < game.length; i++) {
+  for (var j = 0; j < jam.length; j++) {
+   if (Math.pow(jam[j].x - game[i].x, 2) + Math.pow(jam[j].y - game[i].y, 2) < Math.pow(JamRad + GameRad, 2)) {
+    var dist = Math.sqrt(Math.pow(jam[j].x - game[i].x, 2) + Math.pow(jam[j].y - game[i].y, 2));
+    game[i].x = jam[j].x + (game[i].x - jam[j].x) * (JamRad + GameRad + 5) / dist;
+    game[i].y = jam[j].y + (game[i].y - jam[j].y) * (JamRad + GameRad + 5) / dist;
+   }
+  }
+  if (game[i].x < 0 || game[i].y < 0 || game[i].x > getWindowWidth() || game[i].y > getWindowHeight()) {
+   game[i].x = Math.random() * getWindowWidth();
+   game[i].y = Math.random() * getWindowHeight();
+  }
+  game[i].img.style.left = (game[i].x - GameRad) + "px";
+  game[i].img.style.top = (game[i].y - GameRad) + "px";
+ }
+ if (frame % 100 == 1) {
+  // make game
+  var ins = game.length;
+  game[ins] = [];
+  game[ins].x = Math.random() * getWindowWidth();
+  game[ins].y = Math.random() * getWindowHeight();
+  game[ins].img = document.createElement("img");
+  game[ins].img.src = "game" + Math.floor(Math.random() * 4) + ".png";
+  game[ins].img.alt = "game";
+  game[ins].img.style.position = "fixed";
+  game[ins].img.style.left = (game[ins].x - GameRad) + "px";
+  game[ins].img.style.top = (game[ins].y - GameRad) + "px";
+  document.getElementById("gl").appendChild(game[ins].img);
+ }
+}
+  </script>
+ </head>
+ <body onload="start()" onmousemove="mouseMove(event)" onmousedown="mouseDown = true" onmouseup="mouseDown = false">
+  <div style="position: fixed; width: 10000px; height: 10000px"></div> <!-- let onmousemove work -->
+  <div id="jl"></div>
+  <div id="gl"></div>
+ </body>
+</html>

@@ -1,6 +1,0 @@
-{
-  "index.htm" {:title "Andrew Downing's website"}
-  "emai1.htm" {:title "Thanks!"}
-  "test.htm" {:title "Test"}
-  "test2.htm" {:title "Test 2" :submenu "afdartsmenu"}
-}

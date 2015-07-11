@@ -1,0 +1,6 @@
+{
+  "index" {:title "Andrew Downing's website"}
+  "emai1" {:title "Thanks!"}
+  "test" {:title "Test"}
+  "test2" {:title "Test 2" :submenu "afdartsmenu"}
+}

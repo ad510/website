@@ -22,7 +22,6 @@
   "video" {:title "other videos"}
   "physics" {:title "favorite physics explanations"}
   "skilift" {:title "how accelerating ski lifts work"}
-  "iehome" {:title "the best IE home page"}
   "resume" {:title "Andrew Downing's resume"}
   "links" {:title "external links"}
   "emai1" {:title "Thanks!"}

@@ -6,6 +6,6 @@ img {border:0px}
 ul.submenu {margin:0 0 0 0.5em; padding:0 0 0 1em; background-color:white; border:2px solid silver}
 span.h2 {font-weight:bold}
 span.h3 {text-decoration:underline}
-/*h2 {display:inline; font-size:medium; font-weight:bold}
-h3 {display:inline; font-size:medium; font-weight:normal; text-decoration:underline}*/
+table {border-collapse:collapse}
+td.rim {border:1px solid silver}
 pre {overflow:auto}

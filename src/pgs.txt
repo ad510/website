@@ -5,6 +5,7 @@
   "afdarts" {:title "Afdarts" :submenu "afdartsmenu"}
   "afdartsdownload" {:title "Afdarts downloads" :submenu "afdartsmenu"}
   "afdartsdevelopment" {:title "Afdarts development" :submenu "afdartsmenu"}
+  "afdartstheory" {:title "Afdarts code theory" :submenu "afdartsmenu"}
   "afdartsdevelopmentarchive" {:title "Afdarts development archive" :submenu "afdartsmenu"}
   "afdartsmusic" {:title "Afdarts music" :submenu "afdartsmenu"}
   "orts" {:title "ORTS AI competition"}

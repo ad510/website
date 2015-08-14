@@ -1,6 +1,7 @@
 (ns gen (:require clojure.edn
                   [me.raynes.fs :as fs])
-        (:use net.cgrand.enlive-html))
+        (:use net.cgrand.enlive-html)
+        (:gen-class))
 
 (deftemplate base "base.htm" [pg]
   [:title] (content ((pg 1) :title))

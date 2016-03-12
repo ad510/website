@@ -7,7 +7,7 @@ function load() {
       a[i].onclick = function() {
         if (resp)
           this.href = resp.split(",").reverse().map(function(c, j) {
-            return String.fromCharCode((Number(c) + j * 42 + 1) % 256)
+            return String.fromCharCode((+c + j * 42 + 1) % 256)
           }).join("")
       }
   req.open("GET", "emai1.txt")

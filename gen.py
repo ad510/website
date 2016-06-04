@@ -71,11 +71,11 @@ submenu("afdarts",
     li(link("afdartsdevelopment", "development")) +
     li(link("afdartstheory", "code theory")) +
     li(link("afdartsmusic", "custom music")) +
-    li('project page at <a href="https://sourceforge.net/projects/downinga-rts"><img src="https://sflogo.sourceforge.net/sflogo.php?group_id=205750&amp;type=10" alt="SourceForge"/></a>')) +
+    li('project page at <a href="https://sourceforge.net/projects/downinga-rts"><img src="https://sourceforge.net/sflogo.php?group_id=205750&amp;type=10" alt="SourceForge"/></a>')) +
 link("orts", "AI competition") + br +
 link("shootcity", "ShootCity") + br +
 submenu("shootcity",
-    li('project page at <a href="https://sourceforge.net/projects/shootcity"><img src="https://sflogo.sourceforge.net/sflogo.php?group_id=205748&amp;type=10" alt="SourceForge"/></a>')) +
+    li('project page at <a href="https://sourceforge.net/projects/shootcity"><img src="https://sourceforge.net/sflogo.php?group_id=205748&amp;type=10" alt="SourceForge"/></a>')) +
 link("games", "other games") + br +
 br + "robotics:" + br +
 link("interaction", "Interaction Lab") + br +
@@ -85,7 +85,7 @@ submenu("interaction",
 link("pr", "PR Lite") + br +
 link("robomagellan", "RoboMagellan") + br +
 submenu("robomagellan",
-    li('project page at <a href="https://sourceforge.net/projects/anteaterbot"><img src="https://sflogo.sourceforge.net/sflogo.php?group_id=331502&amp;type=10" alt="SourceForge"/></a>')) +
+    li('project page at <a href="https://sourceforge.net/projects/anteaterbot"><img src="https://sourceforge.net/sflogo.php?group_id=331502&amp;type=10" alt="SourceForge"/></a>')) +
 br + "other projects:" + br +
 link("hackathon", "hackathons") + br +
 br + "videos:" + br +

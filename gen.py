@@ -88,6 +88,7 @@ submenu("robomagellan",
     li('project page at <a href="https://sourceforge.net/projects/anteaterbot"><img src="https://sourceforge.net/sflogo.php?group_id=331502&amp;type=10" alt="SourceForge"/></a>')) +
 br + "other projects:" + br +
 link("hackathon", "hackathons") + br +
+'<a href="https://github.com/ad510/vb6-code-dump">VB6 code dump</a>' + br +
 br + "videos:" + br +
 link("videorobots", "robots") + br +
 link("videogames", "games") + br +

@@ -2,7 +2,7 @@ Frontend templates for http://andrewd.50webs.com/.
 
 Copying
 -------
-Written in 2015-2016 by Andrew Downing
+Written in 2015-2017 by Andrew Downing
 
 To the extent possible under law, the author(s) have dedicated all copyright and related and neighboring rights to this software to the public domain worldwide. This software is distributed without any warranty.
 
